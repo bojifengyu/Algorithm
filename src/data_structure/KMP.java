@@ -2,8 +2,8 @@ package data_structure;
 
 public class KMP {  
     public static void main(String[] args) {  
-        String s = "ababaabcac"; // 主串  
-        String t = "ab"; // 模式串  
+        String s = "ababcaabcac"; // 主串  
+        String t = "abc"; // 模式串  
         char[] ss = s.toCharArray();  
         char[] tt = t.toCharArray();  
         System.out.println(KMP_Index(ss, tt)); // KMP匹配字符串  
