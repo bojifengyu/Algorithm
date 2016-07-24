@@ -2,19 +2,19 @@ package data_structure;
 
 public class KMP {  
     public static void main(String[] args) {  
-        String s = "123123789"; // Ö÷´®  
-        String t = "123789"; // Ä£Ê½´®  
+        String s = "123123789"; // ä¸»ä¸²  
+        String t = "123789"; // æ¨¡å¼ä¸²  
         char[] ss = s.toCharArray();  
         char[] tt = t.toCharArray();  
-        System.out.println(KMP_Index(ss, tt)); // KMPÆ¥Åä×Ö·û´®  
+        System.out.println(KMP_Index(ss, tt)); // KMPåŒ¹é…å­—ç¬¦ä¸²  
     }  
   
     /** 
-     * »ñµÃ×Ö·û´®µÄnextº¯ÊıÖµ 
+     * è·å¾—å­—ç¬¦ä¸²çš„nextå‡½æ•°å€¼ 
      *  
      * @param t 
-     *            ×Ö·û´® 
-     * @return nextº¯ÊıÖµ 
+     *            å­—ç¬¦ä¸² 
+     * @return nextå‡½æ•°å€¼ 
      */  
     public static int[] next(char[] t) {  
         int[] next = new int[t.length];  
@@ -38,13 +38,13 @@ public class KMP {
     }  
   
     /** 
-     * KMPÆ¥Åä×Ö·û´® 
+     * KMPåŒ¹é…å­—ç¬¦ä¸² 
      *  
      * @param s 
-     *            Ö÷´® 
+     *            ä¸»ä¸² 
      * @param t 
-     *            Ä£Ê½´® 
-     * @return ÈôÆ¥Åä³É¹¦£¬·µ»ØÏÂ±ê£¬·ñÔò·µ»Ø-1 
+     *            æ¨¡å¼ä¸² 
+     * @return è‹¥åŒ¹é…æˆåŠŸï¼Œè¿”å›ä¸‹æ ‡ï¼Œå¦åˆ™è¿”å›-1 
      */  
     public static int KMP_Index(char[] s, char[] t) {  
         int[] next = next(t);  
@@ -61,6 +61,6 @@ public class KMP {
         if (j < t.length) {  
             return -1;  
         } else  
-            return i - t.length; // ·µ»ØÄ£Ê½´®ÔÚÖ÷´®ÖĞµÄÍ·ÏÂ±ê  
+            return i - t.length; // è¿”å›æ¨¡å¼ä¸²åœ¨ä¸»ä¸²ä¸­çš„å¤´ä¸‹æ ‡  
     }  
 }  

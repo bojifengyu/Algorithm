@@ -17,7 +17,7 @@ class Solution004 {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
     	int len1 = nums1.length, len2 = nums2.length;
     	int sum_len = len1 + len2;
-    	int flag = sum_len % 2;//±ê¼ÇÊı×éÔªËØÊıÁ¿Ö®ºÍÊÇÆæÊı»¹ÊÇÅ¼Êı£¬0±íÊ¾Å¼Êı£¬1±íÊ¾ÆæÊı
+    	int flag = sum_len % 2;//æ ‡è®°æ•°ç»„å…ƒç´ æ•°é‡ä¹‹å’Œæ˜¯å¥‡æ•°è¿˜æ˜¯å¶æ•°ï¼Œ0è¡¨ç¤ºå¶æ•°ï¼Œ1è¡¨ç¤ºå¥‡æ•°
     	if((len1 == 0) || (len2 == 0)){
     		if((flag == 0)){
     			if((len1 == 0)){
