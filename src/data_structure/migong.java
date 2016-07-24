@@ -67,7 +67,7 @@ class Pos{
 public class migong {
 	
 	boolean MazePath(int maze[][], Seat start, Seat end){
-		Stack S = new Stack();
+		Stack<Pos> S = new Stack<Pos>();
 		Pos curpos = new Pos(start); 
 		Pos e = new Pos();
 		do{
@@ -88,7 +88,7 @@ public class migong {
 					e = (Pos) S.pop();
 					while(e.direct == 4 && !S.isEmpty()){
 						System.out.println("(" + e.s.x + "," + e.s.y + ")");
-//						System.out.println("¾­¹ıµã" + "(" + e.s.x + "," + e.s.y + ")" + "µÄÂ·²»ÄÜÍ¨¹ı");
+//						System.out.println("ç»è¿‡ç‚¹" + "(" + e.s.x + "," + e.s.y + ")" + "çš„è·¯ä¸èƒ½é€šè¿‡");
 						e = (Pos) S.pop();
 					}///while
 					if(e.direct < 4){
