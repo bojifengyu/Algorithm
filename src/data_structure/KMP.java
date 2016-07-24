@@ -36,6 +36,8 @@ public class KMP {
     }  
   
     /** 
+     * https://tekmarathon.com/2013/05/14/algorithm-to-find-substring-in-a-string-kmp-algorithm/
+     * 
      * KMP匹配字符串 
      *  
      * @param s 
