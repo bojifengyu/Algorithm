@@ -1,7 +1,6 @@
 package data_structure;
 
 import java.util.Stack;    
-import java.util.HashMap;    
     
 public class BinTree {    
     private char date;    
@@ -47,13 +46,13 @@ public class BinTree {
         Stack<BinTree> s = new Stack<BinTree>();    
         while (t != null || !s.empty()) {    
             while (t != null) {    
-                System.out.print(t.date);    
+                System.out.print(t.date);    //打印结点
                 s.push(t);    
                 t = t.lchild;    
-            }    
+            }                                //左孩子结点压栈直至某个结点没有左孩子
             if (!s.empty()) {    
-                t = s.pop();    
-                t = t.rchild;    
+                t = s.pop();                 //最左左孩子结点出栈，指针指向出栈结点右孩子
+                t = t.rchild;       
             }    
         }    
     }    
@@ -65,11 +64,11 @@ public class BinTree {
             while (t != null) {    
                 s.push(t);    
                 t = t.lchild;    
-            }    
+            }                                //左孩子结点压栈直至某个结点没有左孩子
             if (!s.empty()) {    
-                t = s.pop();    
-                System.out.print(t.date);    
-                t = t.rchild;    
+                t = s.pop();                 //最左左孩子结点出栈
+                System.out.print(t.date);    //打印结点
+                t = t.rchild;                //指针指向出栈结点右孩子
             }    
         }    
     }    
