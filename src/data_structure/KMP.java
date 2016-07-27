@@ -2,7 +2,7 @@ package data_structure;
 
 public class KMP {  
     public static void main(String[] args) {  
-        String s = "aaabaaaabaaaabaaaabaaaab"; // 主串  
+        String s = "aaabaaaabaaaabaaaab"; // 主串  
         String t = "aaaab"; // 模式串  
         char[] ss = s.toCharArray();  
         char[] tt = t.toCharArray();  
