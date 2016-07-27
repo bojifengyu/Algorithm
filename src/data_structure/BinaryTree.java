@@ -3,19 +3,19 @@ package data_structure;
 import java.util.Stack;  
 
 class Node { 
-	private char root;
+	private char data;
 	private Node leftchild;
 	private Node rightchild;
 	public Node(char c){
-		root = c;
+		data = c;
 	}
 	public Node(char c, Node l, Node r){
-		root = c;
+		data = c;
 		leftchild = l;
 		rightchild = r;
 	}
 	public char getKey(){
-		return root;
+		return data;
 	}
 	public Node getLeft(){
 		return leftchild;
@@ -25,14 +25,14 @@ class Node {
 	}
 }
 public class BinaryTree {  
-    protected Node root;  
+    protected Node data;  
   
-    public BinaryTree(Node root) {  
-        this.root = root;  
+    public BinaryTree(Node data) {  
+        this.data = data;  
     }  
   
     public Node getRoot() {  
-        return root;  
+        return data;  
     }  
   
     /** 构造树 */  

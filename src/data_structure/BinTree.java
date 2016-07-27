@@ -3,12 +3,12 @@ package data_structure;
 import java.util.Stack;    
     
 public class BinTree {    
-    private char date;    
+    private char data;    
     private BinTree lchild;    
     private BinTree rchild;    
     
     public BinTree(char c) {    
-        date = c;    
+        data = c;    
     }    
     
     // 先序遍历递归     
@@ -16,7 +16,7 @@ public class BinTree {
         if (t == null) {    
             return;    
         }    
-        System.out.print(t.date);    
+        System.out.print(t.data);    
         preOrder(t.lchild);    
         preOrder(t.rchild);    
     }    
@@ -27,7 +27,7 @@ public class BinTree {
             return;    
         }    
         InOrder(t.lchild);    
-        System.out.print(t.date);    
+        System.out.print(t.data);    
         InOrder(t.rchild);    
     }    
     
@@ -38,7 +38,7 @@ public class BinTree {
         }    
         PostOrder(t.lchild);    
         PostOrder(t.rchild);    
-        System.out.print(t.date);    
+        System.out.print(t.data);    
     }    
     
     // 先序遍历非递归     
@@ -46,7 +46,7 @@ public class BinTree {
         Stack<BinTree> s = new Stack<BinTree>();    
         while (t != null || !s.empty()) {    
             while (t != null) {    
-                System.out.print(t.date);    //打印结点
+                System.out.print(t.data);    //打印结点
                 s.push(t);    
                 t = t.lchild;    
             }                                //左孩子结点压栈直至某个结点没有左孩子
@@ -67,7 +67,7 @@ public class BinTree {
             }                                //左孩子结点压栈直至某个结点没有左孩子
             if (!s.empty()) {    
                 t = s.pop();                 //最左左孩子结点出栈
-                System.out.print(t.date);    //打印结点
+                System.out.print(t.data);    //打印结点
                 t = t.rchild;                //指针指向出栈结点右孩子
             }    
         }    
@@ -86,7 +86,7 @@ public class BinTree {
             }    
             while (!s.empty() && s2.peek().equals(i)) {    
                 s2.pop();    
-                System.out.print(s.pop().date);    
+                System.out.print(s.pop().data);    
             }    
     
             if (!s.empty()) {    
