@@ -49,7 +49,7 @@ class BTree{
      return i;
     }
 }
-public class NodeLength{
+public class BinaryTreeNodeLength{
     public static void main(String[] args) {    
     	BTree b1 = BTree.init(); 
     	System.out.print(BTree.get_node_layer(b1, 'e', 0));

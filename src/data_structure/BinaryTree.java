@@ -1,5 +1,7 @@
 package data_structure;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;  
 
 class Node { 
@@ -244,6 +246,22 @@ public class BinaryTree {
             }  
         }  
     }  
+    /** 
+     *  
+     * @param root 树根节点 
+     * 层序遍历二叉树，用队列实现，先将根节点入队列，只要队列不为空，然后出队列，并访问，接着讲访问节点的左右子树依次入队列 
+     */  
+    public static void levelTravel(Node root){  
+        if(root==null)return;  
+        Queue<Node> q=new LinkedList<Node>();  
+        q.add(root);  
+        while(!q.isEmpty()){  
+            Node temp =  q.poll();  
+            visit(temp);
+            if(temp.getLeft()!=null)q.add(temp.getLeft());  
+            if(temp.getRight()!=null)q.add(temp.getRight());  
+        }  
+    }  
   
     /** 
      * @param args 
@@ -283,5 +301,8 @@ public class BinaryTree {
         System.out.print("Post-Order4:");  
         iterativePostorder4(tree.getRoot());  
         System.out.println();    
+        System.out.print("level-Order:");  
+        levelTravel(tree.getRoot());  
+        System.out.println();  
     }    
 }
