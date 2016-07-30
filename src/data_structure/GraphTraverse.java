@@ -16,12 +16,9 @@ public class GraphTraverse {
         edges = new int[n][n];
         vertexList = new ArrayList<Object>(n);
         numOfEdges = 0;
+        isVisited = new boolean[n];    	
     }
     
-    public void initIsVisited(){
-        isVisited = new boolean[vertexList.size()];    	
-    }
-
     //得到结点的个数
     public int getNumOfVertex() {
         return vertexList.size();
@@ -96,7 +93,10 @@ public class GraphTraverse {
     }
     
     //对外公开函数，深度优先遍历
-    public void depthFirstSearch() {
+    public void depthFirstSearch() { 
+        for(int i = 0; i < getNumOfVertex(); i++) {
+        	isVisited[i] = false;
+        }
         for(int i = 0; i < getNumOfVertex(); i++) {
             //因为对于非连通图来说，并不是通过一个结点就一定可以遍历所有结点的。
             if (!isVisited[i]) {
@@ -136,6 +136,9 @@ public class GraphTraverse {
     //对外公开函数，广度优先遍历
     public void broadFirstSearch() {
         for(int i = 0; i < getNumOfVertex(); i++) {
+        	isVisited[i] = false;
+        }
+        for(int i = 0; i < getNumOfVertex(); i++) {
             if(!isVisited[i]) {
                 BFS(isVisited, i);
             }
@@ -169,12 +172,10 @@ public class GraphTraverse {
         graph.insertEdge(5, 2, 1);
         graph.insertEdge(6, 5, 1);
         
-        graph.initIsVisited();
         System.out.println("深度优先搜索序列为：");
         graph.depthFirstSearch();
         System.out.println();
         
-        graph.initIsVisited();
         System.out.println("广度优先搜索序列为：");
         graph.broadFirstSearch();
     }
